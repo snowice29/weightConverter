@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>WeightConverter</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mx-auto">
+            <div class="col">
+                <h1 class="display-4 text-center mb-5"><i class="fas fa-weight"></i> Weight Converter</h1>
+                <form>
+                    <div class="form-group mb-5">
+                        <input type="number" class="form-control form-control-lg" placeholder="Enter weight in pounds"
+                            id="lbsInput">
+                    </div>
+                </form>
+                <!-- output -->
+                <div id="output">
+                    <div class="col">
+                        <!-- Gram -->
+                        <div class="card text-white bg-primary mb-3 animated bounceInLeft">
+                            <div class="card-header">
+                                <div class="card-body">
+                                    <h4>Grams: </h4>
+                                    <div id="gramsOutput">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Kilogram -->
+                    <div class="col">
+                        <div class="card text-white bg-danger mb-3 animated pulse">
+                            <div class="card-header">
+                                <div class="card-body">
+                                    <h4>Kilograms: </h4>
+                                    <div id="kgOutput">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- OUNCES -->
+                    <div class="col">
+                        <div class="card text-white bg-warning mb-3 animated bounceInRight">
+                            <div class="card-header">
+                                <div class="card-body">
+                                    <h4>Ounces: </h4>
+                                    <div id="ozOutput">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OUNCES -->
+                    <div class="col">
+                        <div class="card text-white bg-info mb-3 animated bounceInLeft">
+                            <div class="card-header">
+                                <div class="card-body">
+                                    <h4>Milligrams: </h4>
+                                    <div id="mgOutput">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+
+
+    <!-- SCRIPT -->
+    <script>
+        // document.getElementById('output').style.visibility = 'hidden';
+        document.getElementById('lbsInput').addEventListener('input', function (e) {
+            // document.getElementById('output').style.visibility = 'visible';
+            let lbs = e.target.value;
+            document.getElementById('gramsOutput').innerHTML = lbs / 0.0022046;
+            document.getElementById('kgOutput').innerHTML = lbs / 2.2046;
+            document.getElementById('ozOutput').innerHTML = lbs * 16;
+            document.getElementById('mgOutput').innerHTML = lbs * 453592;
+        });
+    </script>
+</body>
+
+</html>
